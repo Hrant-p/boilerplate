@@ -24,6 +24,7 @@ module.exports = (env = {}) => {
       new HtmlWebpackPlugin({
         title: "App",
         template: "public/index.html",
+        favicon: 'public/favicon.ico',
         hash: true
       })
     ];
@@ -32,7 +33,7 @@ module.exports = (env = {}) => {
       plugins.push(
         new BundleAnalyzerPlugin(),
         new CleanWebpackPlugin(),
-        new MiniExtractPlugin({
+        new MiniCssExtractPlugin({
           filename: "css/main-[hash:8].css"
         })
       );
